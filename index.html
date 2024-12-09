@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaysian Masala Restaurant - Menu Ordering</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Ensure this path is correct -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcc00;
+            color: #333;
+        }
+        h1 {
+            margin: 0;
+        }
+        h2 {
+            color: #d77b30;
+        }
+        .menu-category {
+            margin: 20px 0;
+        }
+        .menu-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .add-to-cart {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            background-color: #218838;
+        }
+        .cart {
+            margin-top: 30px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .submit-order {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .submit-order:hover {
+            background-color: #0069d9;
+        }
+        .confirmation-message {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Malaysian Masala Restaurant</h1>
+    <p>Online Ordering Menu</p>
+</header>
+
+<h2>Welcome to Malaysian Masala Restaurant!</h2>
+<p>Craving for Malaysian flavors with a masala twist? Place your order now for quick pickup or delivery!</p>
+
+<div class="menu-category">
+    <h3>Starters</h3>
+    <div class="menu-item">
+        <strong>Masala Papadum</strong> - RM 5
+        <button class="add-to-cart" onclick="addToCart('Masala Papadum', 5)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <strong>Chicken Tikka Bites</strong> - RM 15
+        <button class="add-to-cart" onclick="addToCart('Chicken Tikka Bites', 15)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <strong>Spicy Aloo Tikki</strong> - RM 12
+        <button class="add-to-cart" onclick="addToCart('Spicy Aloo Tikki', 12)">Add to Cart</button>
+    </div>
+</div>
+
+<div class="menu-category">
+    <h3>Mains</h3>
+    <div class="menu-item">
+        <strong>Butter Chicken</strong> - RM 25
+        <button class="add-to-cart" onclick="addToCart('Butter Chicken', 25)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <strong>Fish Curry</strong> - RM 28
+        <button class="add-to-cart" onclick="addToCart('Fish Curry', 28)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <strong>Lamb Rendang</strong> - RM 30
+        <button class="add-to-cart" onclick="addToCart('Lamb Rendang', 30)">Add to Cart</button>
+    </div>
+</div>
+
+<div class="menu-category">
+    <h3>Rice & Noodles</h3>
+    <div class="menu-item">
+        <strong>Nasi Lemak</strong> - RM 18
+        <button class="add-to-cart" onclick="addToCart('Nasi Lemak', 18)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <strong>Char Kway Teow</strong> - RM 16
+        <button class="add-to-cart" onclick="addToCart('Char Kway Teow', 16)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <strong>Chicken Fried Rice</strong> - RM 15
+        <button class="add-to-cart" onclick="addToCart('Chicken Fried Rice', 15)">Add to Cart</button>
+    </div>
+</div>
+
+<div class="menu-category">
+    <h3>Vegetarian Specials</h3>
+    <div class="menu-item">
+        <strong>Vegetable Biryani</strong> - RM 20
+        <button class="add-to-cart" onclick="addToCart('Vegetable Biryani', 20)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <strong>Paneer Tikka</strong> - RM 22
+        <button class="add-to-cart" onclick="addToCart('Paneer Tikka', 22)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <strong>Mixed Vegetable Curry</strong> - RM 18
+        <button class="add-to-cart" onclick="addToCart('Mixed Vegetable Curry', 18)">Add to Cart</button>
+    </div>
+</div>
+
+<div class="menu-category">
+    <h3>Drinks & Desserts</h3>
+    <div class="menu-item">
+        <strong>Mango Lassi</strong> - RM 8
+        <button class="add-to-cart" onclick="addToCart('Mango Lassi', 8)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <strong>Gulab Jamun</strong> - RM 7
+        <button class="add-to-cart" onclick="addToCart('Gulab Jamun', 7)">Add to Cart</button>
+    </div>
+    <div class="menu-item">
+        <strong>Masala Chai</strong> - RM 6
+        <button class="add-to-cart" onclick="addToCart('Masala Chai', 6)">Add to Cart</button>
+    </div>
+</div>
+
+<div class="cart">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <p id="total-price">Total: RM 0</p>
+    <button class="submit-order" onclick="submitOrder()">Submit Order</button>
+</div>
+
+<div class="confirmation-message" id="confirmation-message"></div>
+
+<footer>
+    <p>&copy; 2024 Malaysian Masala Restaurant</p>
+    <p>Location: 46, Jalan Impian Emas 7, Taman Impian Emas, 81300 Skudai, Johor</p>
+</footer>
+
+<script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(item, price) {
+        cart.push({ item, price });
+        total += price;
+        displayCart();
+    }
+
+    function displayCart() {
+        const cartItems = document.getElementById('cart-items');
+        const totalPrice = document.getElementById('total-price');
+
+        // Clear the cart display
+        cartItems.innerHTML = '';
+        // Add each item to the cart display
+        cart.forEach(cartItem => {
+            const li = document.createElement('li');
+            li.textContent = `${cartItem.item} - RM ${cartItem.price}`;
+            cartItems.appendChild(li);
+        });
+        // Update the total price
+        totalPrice.textContent = `Total: RM ${total}`;
+    }
+
+    function submitOrder() {
+        if (cart.length === 0) {
+            alert("Your cart is empty! Please add items before submitting.");
+            return;
+        }
+
+        // Save the order to local storage
+        const order = {
+            items: cart,
+            total: total,
+            timestamp: new Date().toLocaleString()
+        };
+        const orders = JSON.parse(localStorage.getItem('orders')) || [];
+        orders.push(order);
+        localStorage.setItem('orders', JSON.stringify(orders));
+
+        const confirmationMessage = document.getElementById('confirmation-message');
+        confirmationMessage.textContent = "Your order has been submitted successfully!";
+
+        // Clear the cart after submission
+        cart = [];
+        total = 0;
+        displayCart();
+    }
+</script>
+
+</body>

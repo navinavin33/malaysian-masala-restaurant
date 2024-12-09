@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - Malaysian Masala Restaurant</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcc00;
+            color: #333;
+        }
+        h1 {
+            margin: 0;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .generate-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .generate-btn:hover {
+            background-color: #0069d9;
+        }
+        .qr-code {
+            margin-top: 20px;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Malaysian Masala Restaurant</h1>
+    <p>QR Code Generator</p>
+</header>
+
+<div class="form-container">
+    <h2>Generate Your QR Code</h2>
+    <p>Click the button below to generate a QR code that links to our menu:</p>
+    <button class="generate-btn" onclick="generateQRCode()">Generate QR Code</button>
+</div>
+
+<div class="qr-code" id="qr-code"></div>
+
+<footer>
+    <p>&copy; 2024 Malaysian Masala Restaurant</p>
+    <p>Location: 46, Jalan Impian Emas 7, Taman Impian Emas, 81300 Skudai, Johor</p>
+</footer>
+
+<script>
+    function generateQRCode() {
+        const menuUrl = 'YOUR_MENU_PAGE_URL_HERE'; // Replace with your actual menu page URL
+
+        // Clear previous QR code
+        $('#qr-code').empty();
+
+        // Generate QR code
+        $('#qr-code').qrcode({
+            width: 200,
+            height: 200,
+            text: menuUrl
+        });
+    }
+</script>
+
+</body>
+</html>
+
